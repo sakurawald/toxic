@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= config.title %></title>
+    <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+</head>
+<body>
+<header>
+    <p>== post ==</p>
+</header>
+<main>
+    <% page.posts.each(function(post){ %>
+        <article>
+            <p><%= post.date.format('MMMM DD, YYYY') %>
+                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            </p>
+        </article>
+    <% }); %>
+</main>
+<footer>
+    <p>Copyright &copy; 2020-<%= new Date().getFullYear() %> <%= config.author %></p>
+</footer>
+</body>
+</html>
