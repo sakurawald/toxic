@@ -1,7 +1,7 @@
 <hr>
 <p>Please send your comments to email sakurawald@gmail.com</p>
-<p>Click here to <a href="<% config.url %>">homepage</a></p>
-
+<p>See links: <a href="<%- config.root %>">homepage</a>
+</p>
 <p>See tags:
     <% site.tags.each(function(tag, path){ %>
         <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
